@@ -6,9 +6,9 @@ Déployer le code présent dans ce bucket s3 dans une fonction lambda sur AWS en
 module terraform
 
 ## Prérequis
-1.VS Code
-2.Un compte AWS
-3. Terraform Cli
+1.VS Code <br>
+2.Un compte AWS<br>
+3. Terraform Cli<br>
 4. Une clé SSH générer sur Internet
 
 
