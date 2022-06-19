@@ -7,7 +7,7 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-data "archive_file" "lambda_zip" {
+data "archive_file" "lambda_zip" {  #fonction lambda avec les pré-requis attendu 
     type          = "zip"
     source_file   = "hello.js"
     output_path   = "hello-world.zip"

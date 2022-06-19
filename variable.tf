@@ -14,3 +14,4 @@ variable "AWS_REGION" {
 variable "AWS_AMI" {
     type = string
 }
+# Définition de nos différents variables :D

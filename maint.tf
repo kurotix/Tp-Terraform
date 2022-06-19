@@ -1,9 +1,9 @@
-provider "aws" {
+provider "aws" {            #Provider aws avec les infos région, access et secret variabilisé)
     region = var.AWS_REGION
     access_key = var.AWS_ACCESS_KEY
     secret_key = var.AWS_SECRET_KEY 
 }
-
+                                            #Configuration de l'instance 
 resource "aws_instance" "my_ec2_instance"{
     ami = data.aws_ami.ubuntu-ami.id
     instance_type = tolist(data.aws_ec2_instance_types.ami_instance.instance_types)[0]
@@ -21,7 +21,7 @@ resource "aws_instance" "my_ec2_instance"{
         Name = "terraform test ilyes"
     }
 }
-
+                            #Initialisation du grp de sécurité
 resource "aws_security_group" "instance_sg" {
     name = "terraform-test-sg-ilyes4"
 
@@ -47,7 +47,7 @@ resource "aws_security_group" "instance_sg" {
     }
 }
 
-
+            # définition de l'adresse de sortie
 output "adresse_ip_instance" {
   value = aws_instance.my_ec2_instance.public_ip
 }
@@ -69,7 +69,7 @@ data "aws_ec2_instance_types" "ami_instance" {
     }
 }
 
-
+                    #Module défini accompagné du nom de la bucket que l'on retrouvera via l'IHM de AWS
 module "website_s3_bucket" {
     source = "./modules/aws-s3-static-website-bucket"
     bucket_name = "ilyes-terraform-module-test-dog"

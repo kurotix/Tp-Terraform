@@ -8,7 +8,4 @@ output "name" {
     value       = aws_s3_bucket.s3_bucket.id
 }
 
-output "end_point" {
-    description = "je fais un test"
-    value       = aws_s3_bucket.module.website_s3_bucket
-}
+# Définition ci-dessus des différents output
