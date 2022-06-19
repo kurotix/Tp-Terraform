@@ -1,16 +1,26 @@
-# AWS S3 static website bucket
-
+# TP Terraform
 Ce module provisionne un bucket S3 configuré pour l'hébergement d'un site web statique.
 
-## Usage
+## Description
+Déployer le code présent dans ce bucket s3 dans une fonction lambda sur AWS en créant un
+module terraform
 
-```hcl
-module "<module name>" {
-    source = "path of your module"
-    bucket_name = "<UNIQ BUCKET NAME>"
-    tags = {
-        key   = "<value>"
-    }
-}
+## Prérequis
+1.VS Code
+2.Un compte AWS
+3. Terraform Cli
+4. Une clé SSH générer sur Internet
+
+
+## Démarrage
+Se placer à la racine du projet et exécuter les commandes suivantes
 ```
-Lorsque votre bucket est créé, envoyer un fichier `index.html` et un fichier `error.html` dans votre bucket. 
+terraform init 
+
+terraform plan
+
+terraform apply
+```
+Maintenant, se rentre sur la liste des bucket s3 et constater la création de sa bucket
+## Félicitation tu sais maintenant lancer des commandes Terraform :D
+Ps: Oublie pas d'executer la commande "terraform destroy" une fois ton activité fini.
